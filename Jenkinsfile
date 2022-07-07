@@ -1,28 +1,32 @@
-pipeline {
-    agent any
+pipeline{
+    agent {
+        node {
+            label 'jenkis_try'
+            customWork
+            space '/root/api_app/jenkis_try/'
+        }
+    }
 
     triggers{
         githubPush()
     }
 
     stages{
-        stage('Target File'){
+        stage('Find Target'){
             steps{
-                sh 'cd ../../../../../'
-                sh 'cd root/api_app/jenkis_try/'
+                sh 'pwd'
             }
         }
-        stage('Pull'){
+        stage('Pull Github'){
             steps{
-                sh 'npm install'
-                sh 'git add .'
                 sh 'git pull origin main'
             }
         }
-        stage('Start'){
+        stage('PROJECT RUNNING'){
             steps{
                 sh 'npm run start'
             }
         }
     }
+
 }
