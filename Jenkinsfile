@@ -6,14 +6,9 @@ pipeline{
     }
 
     stages{
-        stage('Pull Github'){
+        stage('PROJECT CHECK'){
             steps{
-                sh 'git pull origin main'
-            }
-        }
-        stage('PROJECT RUNNING'){
-            steps{
-                sh 'npm run start'
+                sh 'pm2 list'
             }
         }
     }
