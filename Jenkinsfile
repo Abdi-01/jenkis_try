@@ -8,7 +8,7 @@ pipeline{
     stages{
         stage('INITIALIZE'){
             steps{
-                sh 'sh ls'
+                sh 'ls'
                 sh 'git pull origin main'
                 sh 'npm i'
                 sh 'git add .'
@@ -17,6 +17,7 @@ pipeline{
         stage('RUN'){
             steps{
                 sh 'pm2 start index.js'
+                sh 'pm2 list'
             }
         }
     }
