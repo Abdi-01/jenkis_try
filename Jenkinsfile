@@ -1,10 +1,5 @@
 pipeline{
-    agent {
-        node {
-            label 'jenkis_try'
-            customWorkspace '/root/api_app/jenkis_try/'
-        }
-    }
+    agent any
 
     triggers{
         githubPush()
@@ -13,7 +8,8 @@ pipeline{
     stages{
         stage('Find Target'){
             steps{
-                sh 'pwd'
+                sh 'cd ../../../../../'
+                sh 'cd root/api_app/JENKIS-TRY/'
             }
         }
         stage('Pull Github'){
