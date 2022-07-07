@@ -16,9 +16,7 @@ pipeline{
         }
         stage('RUN'){
             steps{
-                sh 'pm2 stop 0'
-                sh 'pm2 stop 1'
-                sh 'pm2 start index.js'
+                sh 'sudo pm2 start index.js'
             }
         }
     }
