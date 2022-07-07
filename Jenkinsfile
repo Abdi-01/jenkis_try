@@ -17,8 +17,7 @@ pipeline{
         stage('RUN'){
             steps{
                 sh 'pm2 list'
-                sh 'pm2 start index.js'
-                sh 'pm2 list'
+                sh 'pm2 start api.js --attach'
             }
         }
     }
