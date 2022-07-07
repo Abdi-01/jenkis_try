@@ -8,10 +8,7 @@ pipeline{
     stages{
         stage('Find Target'){
             steps{
-                sh 'pwd'
-                sh 'cd ../../../../../'
-                sh 'pwd'
-                sh 'cd root/jenkis_try/'
+                sh 'cd ../../../../../root/jenkis_try/'
             }
         }
         stage('Pull Github'){
