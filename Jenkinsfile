@@ -1,7 +1,7 @@
 pipeline{
     agent {
         node {
-            label 'jenkis_try-project'
+            label 'jenkis_try'
             customWorkspace '/root/api_app/jenkis_try/'
         }
     }
