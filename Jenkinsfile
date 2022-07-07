@@ -10,6 +10,7 @@ pipeline{
             steps{
                 sh 'pwd'
                 sh 'cd ../../../../../'
+                sh 'pwd'
                 sh 'cd root/jenkis_try/'
             }
         }
