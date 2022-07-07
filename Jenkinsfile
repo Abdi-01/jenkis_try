@@ -10,7 +10,7 @@ pipeline{
             steps{
                 sh script:'''
                 #!/bin/bash
-                pwd
+                cd ../../../../../root/jenkis_try/
                 '''
             }
         }
