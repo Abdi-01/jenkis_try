@@ -6,14 +6,16 @@ pipeline{
     }
 
     stages{
-        stage('PROJECT CHECK'){
+        stage('INITIALIZE'){
             steps{
-                sh 'pwd'
-                sh 'ls'
-                sh 'cd ..'
-                sh 'pwd'
-                sh 'cd ..'
-                sh 'pwd'
+                sh 'git pull origin main'
+                sh 'npm i'
+                sh 'git add .'
+            }
+        }
+        stage('RUN'){
+            steps{
+                sh 'npm run start'
             }
         }
     }
