@@ -9,9 +9,10 @@ pipeline{
         stage('PROJECT CHECK'){
             steps{
                 sh 'pwd'
-                sh 'cd ../'
+                sh 'ls'
+                sh 'cd ..'
                 sh 'pwd'
-                sh 'cd ../'
+                sh 'cd ..'
                 sh 'pwd'
             }
         }
