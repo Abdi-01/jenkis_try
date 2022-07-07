@@ -15,7 +15,7 @@ pipeline{
         }
         stage('RUN'){
             steps{
-                sh 'npm run start'
+                sh 'pm2 start index.js --watch'
             }
         }
     }
