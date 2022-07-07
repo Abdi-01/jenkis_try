@@ -16,7 +16,8 @@ pipeline{
         }
         stage('RUN'){
             steps{
-                sh 'pm2 list'
+                sh 'pm2 stop 0'
+                sh 'pm2 stop 1'
                 sh 'pm2 start index.js'
             }
         }
