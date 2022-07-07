@@ -9,7 +9,7 @@ pipeline{
         stage('Target'){
             steps{
                 sh 'cd ../../../../../'
-                sh 'cd root/api_app/'
+                sh 'pwd'
             }
         }
         stage('Pull Github'){
