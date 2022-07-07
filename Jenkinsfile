@@ -6,7 +6,7 @@ pipeline{
     }
 
     stages{
-        stage('INITIALIZE'){
+        stage('INITIALIZE GIT'){
             steps{
                 sh 'ls'
                 sh 'git pull origin main'
