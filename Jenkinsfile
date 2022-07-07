@@ -5,7 +5,7 @@ pipeline{
         githubPush()
     }
 
-    node{
+    stages{
         stage('Find Target'){
             steps{
                 sh script:'''
