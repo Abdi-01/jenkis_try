@@ -8,10 +8,8 @@ pipeline{
     stages{
         stage('Find Target'){
             steps{
-                sh script:'''
-                #!/bin/bash
-                cd ../../../../../root/jenkis_try/
-                '''
+                sh 'cd ../../../../../'
+                sh 'cd root/api_app/jenkis_try/'
             }
         }
         stage('Pull Github'){
