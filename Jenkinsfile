@@ -5,10 +5,13 @@ pipeline{
         githubPush()
     }
 
-    stages{
+    node{
         stage('Find Target'){
             steps{
-                sh 'cd ../../../../../root/jenkis_try/'
+                sh script:'''
+                #!/bin/bash
+                pwd
+                '''
             }
         }
         stage('Pull Github'){
