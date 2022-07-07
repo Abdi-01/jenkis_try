@@ -1,19 +1,15 @@
 pipeline{
-    agent  {
-        node {
-            label 'main'
-            customWorkspace '/root/api_app/'
-        }
-    }
+    agent any
 
     triggers{
         githubPush()
     }
 
     stages{
-        stage('Find Target'){
+        stage('Target'){
             steps{
-                sh 'pwd'
+                sh 'cd ../../../../../'
+                sh 'cd root/api_app/'
             }
         }
         stage('Pull Github'){
