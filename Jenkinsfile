@@ -1,30 +1,28 @@
-pipeline{
-    agent {
-        node {
-            customWorkspace '/root/api_app/jenkis_try/'
-        }
-    }
+pipeline {
+    agent any
 
     triggers{
         githubPush()
     }
 
     stages{
-        stage('Find Target'){
+        stage('Target File'){
             steps{
-                sh 'pwd'
+                sh 'cd ../../../../../'
+                sh 'cd root/api_app/jenkis_try/'
             }
         }
-        stage('Pull Github'){
+        stage('Pull'){
             steps{
+                sh 'npm install'
+                sh 'git add .'
                 sh 'git pull origin main'
             }
         }
-        stage('PROJECT RUNNING'){
+        stage('Start'){
             steps{
                 sh 'npm run start'
             }
         }
     }
-
 }
