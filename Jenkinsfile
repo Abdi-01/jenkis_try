@@ -8,7 +8,8 @@ pipeline{
     stages{
         stage('PROJECT CHECK'){
             steps{
-                sh 'pm2 list'
+                sh 'cd ..'
+                sh 'pwd'
             }
         }
     }
